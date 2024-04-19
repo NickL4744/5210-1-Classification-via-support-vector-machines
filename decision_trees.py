@@ -8,7 +8,7 @@ import pandas as pd
 
 #%%
 # Load dataset
-dataset = pd.read_csv('Social_Network_Ads.csv')
+dataset = pd.read_csv('DACs_Dictionary.csv')
 X = dataset.iloc[:, :-1]
 y = dataset.iloc[:,-1]
 

@@ -7,7 +7,7 @@ import pandas as pd
 
 #%%
 # Load dataset
-dataset = pd.read_csv('Mall_Customers.csv')
+dataset = pd.read_csv('DACs_Dictionary.csv')
 X = dataset.iloc[:, [3, 4]].values
 #%% Carefully check this section and try to understand it
 # Use famous elbow method to find the optimal number of clusters
