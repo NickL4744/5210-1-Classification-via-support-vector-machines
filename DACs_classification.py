@@ -7,29 +7,29 @@ import numpy as np
 
 #step 2
 # Load dataset and show basic statistics
-df = pd.read_csv('DACs_Dictionary.csv')
+dataset = pd.read_csv('disadvantaged_communities.csv')
 
 # 1. Show dataset size (dimensions)
-print(f"Dataset size: {df.shape[0]} rows, {df.shape[1]} columns")
+print(f"Dataset size: {dataset.shape[0]} rows, {dataset.shape[1]} columns")
 
 # 2. Show what column names exist for the 9 attributes in the dataset
-print(f"Column names: {df.columns.tolist()}")
+print(f"Column names: {dataset.columns.tolist()}")
 
 # 3. Show the distribution of target_class column
-print(df['target_class'].value_counts())
+#print(dataset['target_class'].value_counts())
 
 # 4. Show the percentage distribution of target_class column
-print(df['target_class'].value_counts(normalize=True) * 100)
+#print(dataset['target_class'].value_counts(normalize=True) * 100)
 
 
 #step 5
 # Separate predictor variables from the target variable
-X = df.iloc[:, :-1]
-y = df.iloc[:, -1]
+X = dataset.iloc[:, :-1]
+y = dataset.iloc[:, -1]
 
 # Create train and test splits for model development. Use the 80% and 20% split ratio
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 
 
 #step 6
